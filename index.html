@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Bimas Islam - Kemenag Kubu Raya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #006400;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        header img {
+            width: 80px;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 16px;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .card h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #006400;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .card a:hover {
+            background: #228B22;
+        }
+        .qrcode-container {
+            text-align: center;
+            padding: 30px;
+            background: #fff;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: fit-content;
+        }
+        footer {
+            text-align: center;
+            background: #006400;
+            color: white;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Logo resmi Kemenag (sumber dari Wikimedia) -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Logo_Kementerian_Agama_Republik_Indonesia.svg/800px-Logo_Kementerian_Agama_Republik_Indonesia.svg.png" alt="Logo Kemenag">
+        <h1>Layanan Digital Bimas Islam</h1>
+        <p>Kementerian Agama Kabupaten Kubu Raya</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Pengajuan SK/ID Masjid & Mushola</h2>
+            <a href="https://forms.gle/link-form1" target="_blank">Akses Form</a>
+        </div>
+        <div class="card">
+            <h2>Permohonan Pengukuran Arah Kiblat</h2>
+            <a href="https://forms.gle/link-form2" target="_blank">Akses Form</a>
+        </div>
+        <div class="card">
+            <h2>Pendaftaran Majelis Taklim</h2>
+            <a href="https://forms.gle/link-form3" target="_blank">Akses Form</a>
+        </div>
+        <div class="card">
+            <h2>Pengajuan & Pengaduan Sertifikat Halal</h2>
+            <a href="https://forms.gle/link-form4" target="_blank">Akses Form</a>
+        </div>
+    </main>
+
+    <!-- QR Code Section -->
+    <div class="qrcode-container">
+        <h3>Akses Cepat dengan Scan QR Code</h3>
+        <div id="qrcode"></div>
+        <p>Scan untuk membuka website layanan ini</p>
+    </div>
+
+    <footer>
+        &copy; 2025 Kemenag Kabupaten Kubu Raya - Seksi Bimas Islam
+    </footer>
+
+    <!-- QRCode.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // QR Code otomatis ambil URL website ini
+        var websiteURL = window.location.href;  
+        new QRCode(document.getElementById("qrcode"), {
+            text: websiteURL,
+            width: 150,
+            height: 150
+        });
+    </script>
+
+</body>
+</html>
